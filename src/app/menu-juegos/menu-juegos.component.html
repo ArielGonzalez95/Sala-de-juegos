@@ -1,4 +1,4 @@
-<section class="card" *ngIf="view">
+<section class="card" >
 
     <div class="container">
 
@@ -8,9 +8,11 @@
         <div class="cardContainer">
 
             <div class="cardItems">
-                <figure class="cardImg">
+                <figure class="cardImg" >
+                        <a  href="/adivina-el-numero">
+                            <img src="assets/img/advina-el-numero.png"alt="" class="cardImagen"/>
+                        </a>
                         
-                        <img src="assets/img/advina-el-numero.png"alt="" class="cardImagen" ng (click)="AdivinaElNumeroIsClick()"  />
                         
                 </figure>
                 <h3 class="cardTitle">Adivina el numero</h3>
@@ -20,7 +22,10 @@
             <div class="cardItems">
                 <figure class="cardImg">
 
-                    <img src="assets/img/ahorcado.png" alt="" class="cardImagen" ng (click)="ahorcadoIsClick()">
+                    <a  href="/ahorcado">
+                        <img src="assets/img/ahorcado.png" alt="" class="cardImagen" >
+                    </a>
+                    
                 </figure>
                 <h3 class="cardTitle">Ahorcado</h3>
                 <p class="cardParrafo2"></p>
@@ -29,8 +34,11 @@
 
             <div class="cardItems">
                 <figure class="cardImg">
-
-                    <img src="assets/img/tateti.png" alt="" class="cardImagen" ng (click)="tatetiIsClick()"> 
+                    <a  href="/tateti">
+                        <img src="assets/img/tateti.png" alt="" class="cardImagen" > 
+                    </a>
+                    
+                    
                 </figure>
                 <h3 class="cardTitle">Ta te ti</h3>
                 <p class="cardParrafo2"></p>
@@ -55,15 +63,4 @@
 </section>
 
 
-<div *ngIf="viewAdivina">
-    <app-adivina-el-numero></app-adivina-el-numero>
-  </div>
-  
-  <div *ngIf="viewAhocado">
-    <app-ahorcado [viewAhorcado]="viewAhocado"></app-ahorcado>
-    </div>
-  
-  <div *ngIf="viewTateti">
-    <app-tateti></app-tateti>
-  </div>
 

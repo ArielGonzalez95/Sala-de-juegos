@@ -16,28 +16,9 @@ export class MenuJuegosComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {  
   }
-  public AdivinaElNumeroIsClick() {
-    this.viewAdivina = true;
-    this.viewAhocado = false;
-    this.viewTateti= false;
-    this.view = false
-  }
-
-  public ahorcadoIsClick() {
-    this.viewAhocado = true; 
-    this.view = false;
-    this.viewAdivina = false;
-    this.viewTateti = false;
-  }
-  public tatetiIsClick() {
-    this.viewTateti = true;
-    this.view = false;
-    this.viewAdivina = false;
-    this.viewAhocado = false;
-    
-  }
- 
-  
-  
   
 }
+
+  
+  
+

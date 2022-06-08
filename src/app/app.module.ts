@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MensajeComponent } from './juegos/adivina-el-numero/mensaje/mensaje.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { QuienSoyComponent } from './quien-soy/quien-soy.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { QuienSoyComponent } from './quien-soy/quien-soy.component';
     AdivinaElNumeroComponent,
     AhorcadoComponent,
     MensajeComponent,
-    QuienSoyComponent
+    QuienSoyComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

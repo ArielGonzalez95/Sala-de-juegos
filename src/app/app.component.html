@@ -1,8 +1,11 @@
-<app-nav></app-nav>
-<div *ngIf="isValid">
-    <app-menu-juegos [view]="aJugar"></app-menu-juegos>
-  </div>
 
-  <div *ngIf="!isValid">
-   <h1>USUARIO NO LOGUEADO</h1>
-  </div>
+
+            
+<app-nav></app-nav>
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top:100px ;">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

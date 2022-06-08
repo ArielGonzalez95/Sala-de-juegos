@@ -11,5 +11,5 @@ export class LoguinComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }
