@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AdivinaElNumeroComponent } from './juegos/adivina-el-numero/adivina-el-numero.component';
 import { MensajeComponent } from './juegos/adivina-el-numero/mensaje/mensaje.component';
 import { AhorcadoComponent } from './juegos/ahorcado/ahorcado.component';
+import { PiedraPapelTijeraComponent } from './juegos/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TatetiComponent } from './juegos/tateti/tateti.component';
 import { LoguinComponent } from './loguin/loguin.component';
 import { MenuJuegosComponent } from './menu-juegos/menu-juegos.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'quien-soy',component:QuienSoyComponent},
   {path:'adivina-el-numero',component:AdivinaElNumeroComponent},
   {path:'ahorcado',component:AhorcadoComponent},
-  {path:'tateti',component:TatetiComponent}
+  {path:'tateti',component:TatetiComponent},
+  {path:'piedra-papel-tijera',component:PiedraPapelTijeraComponent}
   // {path:'adivina-el-numero',component:AdivinaElNumeroComponent},
 
   
