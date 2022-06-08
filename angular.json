@@ -48,7 +48,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "6kb"
                 }
               ],
               "fileReplacements": [
@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "Sala-de-juegos"
+  "defaultProject": "Sala-de-juegos",
+  "cli": {
+    "analytics": "a6435f20-8a81-4e9f-b7d9-55cb21753c94"
+  }
 }
