@@ -53,4 +53,9 @@ export class AdivinaElNumeroComponent implements OnInit {
   
         }
    }
+
+  limpiar(){
+    
+    this.valorInput = "";
+}
 }
