@@ -1,0 +1,69 @@
+<section class="card" *ngIf="view">
+
+    <div class="container">
+
+        <h2 class="titleh2">¿Qué tenes ganas de jugar?</h2>
+    
+
+        <div class="cardContainer">
+
+            <div class="cardItems">
+                <figure class="cardImg">
+                        
+                        <img src="assets/img/advina-el-numero.png"alt="" class="cardImagen" ng (click)="AdivinaElNumeroIsClick()"  />
+                        
+                </figure>
+                <h3 class="cardTitle">Adivina el numero</h3>
+                
+            </div>
+
+            <div class="cardItems">
+                <figure class="cardImg">
+
+                    <img src="assets/img/ahorcado.png" alt="" class="cardImagen" ng (click)="ahorcadoIsClick()">
+                </figure>
+                <h3 class="cardTitle">Ahorcado</h3>
+                <p class="cardParrafo2"></p>
+                
+            </div>
+
+            <div class="cardItems">
+                <figure class="cardImg">
+
+                    <img src="assets/img/tateti.png" alt="" class="cardImagen" ng (click)="tatetiIsClick()"> 
+                </figure>
+                <h3 class="cardTitle">Ta te ti</h3>
+                <p class="cardParrafo2"></p>
+                    
+            </div>
+
+            <div class="cardItems">
+                <figure class="cardImg">
+                    
+                <img src="#" alt="" class="cardImagen">
+                    
+                </figure>
+                <h3 class="cardTitle">??</h3>
+                <p class="cardParrafo2"></p>
+                
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+
+
+<div *ngIf="viewAdivina">
+    <app-adivina-el-numero></app-adivina-el-numero>
+  </div>
+  
+  <div *ngIf="viewAhocado">
+    <app-ahorcado [viewAhorcado]="viewAhocado"></app-ahorcado>
+    </div>
+  
+  <div *ngIf="viewTateti">
+    <app-tateti></app-tateti>
+  </div>
+
