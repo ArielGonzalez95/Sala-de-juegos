@@ -1,4 +1,4 @@
-<section class="auth-form">
+<section class="auth-form container">
   <div class="text-center">
     <h3 class="h3">{{options.label}}</h3>
   </div>
@@ -17,13 +17,13 @@
     </div>
     <div class="text-center mt-5">
       <ng-container *ngIf="options.id === signIn; else showSignTemplate">
-        <a [routerLink]="['/sign-up']" class="text-black">Create new account</a>
+        <a [routerLink]="['/sign-up']" class="text-black">Crear una cuenta nueva</a>
       </ng-container>
     </div>
   </form>
   <ng-template #showSignTemplate>
     <a [routerLink]="['/sign-in']" class="text-black">
-      Already have an account? <small>Sign In here!</small>
+      ¿Ya tenes cuenta?<small>Inicia Sesion</small>
     </a>
   </ng-template>
 </section>
