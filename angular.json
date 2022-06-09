@@ -125,6 +125,7 @@
   },
   "defaultProject": "supabaseAuth",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "defaultCollection": "@angular-eslint/schematics",
+    "analytics": "44a7a913-8c0a-4a28-af3e-8cf67a37e852"
   }
 }
