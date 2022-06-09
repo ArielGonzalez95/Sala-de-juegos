@@ -16,6 +16,17 @@ import { QuienSoyComponent } from './quien-soy/quien-soy.component';
 import { HomeComponent } from './home/home.component';
 
 
+// Firebase services + environment module
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { firebaseConfig } from "./Db";
+import { RegistrarComponent } from './loguin/registrar/registrar.component'
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +39,19 @@ import { HomeComponent } from './home/home.component';
     MensajeComponent,
     QuienSoyComponent,
     HomeComponent,
+    RegistrarComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
