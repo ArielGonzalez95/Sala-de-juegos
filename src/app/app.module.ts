@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MensajeComponent } from './pages/juegos/adivina-el-numero/mensaje/mensaje.component';
 import { AdivinaElNumeroComponent } from './pages/juegos/adivina-el-numero/adivina-el-numero.component';
+import { MenuJuegosComponent } from './pages/menu-juegos/menu-juegos.component';
+import { AhorcadoComponent } from './pages/juegos/ahorcado/ahorcado.component';
+import { TatetiComponent } from './pages/juegos/tateti/tateti.component';
+import { PiedraPapelTijeraComponent } from './pages/juegos/piedra-papel-tijera/piedra-papel-tijera.component';
 
 
 
@@ -18,6 +22,10 @@ import { AdivinaElNumeroComponent } from './pages/juegos/adivina-el-numero/adivi
     AppComponent,
     MensajeComponent,
     AdivinaElNumeroComponent,
+    MenuJuegosComponent,
+    AhorcadoComponent,
+    TatetiComponent,
+    PiedraPapelTijeraComponent
   ],
   imports: [
     BrowserModule,

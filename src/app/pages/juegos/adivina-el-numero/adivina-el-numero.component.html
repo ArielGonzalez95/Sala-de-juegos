@@ -1,5 +1,5 @@
-<body>
-    <main class="container row col-12">
+
+    <main class="container row col-12" *ngIf="userActive">
         <div class="title">Adivina el numero</div>
 
         <div class="row col-2"> 
@@ -13,4 +13,3 @@
             <app-mensaje [mensaje]="mensajeAmodal"></app-mensaje>
              
     </main>
-</body>

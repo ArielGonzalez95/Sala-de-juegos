@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { USER_STORAGE_KEY } from '@shared/constants/constant';
 
 
 @Component({
@@ -9,13 +10,13 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./adivina-el-numero.component.css']
 })
 export class AdivinaElNumeroComponent implements OnInit {
-
+  userActive =localStorage.getItem(USER_STORAGE_KEY);
   valor : boolean = true;
   valorInput : string = "";
   recibidoDePadre:  string = "";
   mensajeAmodal : string ="";  
   
-  constructor(public modal:NgbModal) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuJuegosComponent } from '../menu-juegos/menu-juegos.component';
-import { QuienSoyComponent } from '../quien-soy/quien-soy.component';
 import { HomeComponent } from './home.component';
 
 const routes: Routes = [

@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@auth/guards/auth.guard';
+import { AdivinaElNumeroComponent } from './pages/juegos/adivina-el-numero/adivina-el-numero.component';
+import { AhorcadoComponent } from './pages/juegos/ahorcado/ahorcado.component';
+import { PiedraPapelTijeraComponent } from './pages/juegos/piedra-papel-tijera/piedra-papel-tijera.component';
+import { TatetiComponent } from './pages/juegos/tateti/tateti.component';
+import { MenuJuegosComponent } from './pages/menu-juegos/menu-juegos.component';
 import { QuienSoyComponent } from './pages/quien-soy/quien-soy.component';
+import { QuienSoyModule } from './pages/quien-soy/quien-soy.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
-  { path: 'quien-soy', component:QuienSoyComponent},
-  { path: 'menu-juegos', loadChildren: () => import('./pages/menu-juegos/menu-juegos.component').then(m => m.MenuJuegosComponent),canActivate: [AuthGuard]},
-  { path: 'adivina-el-numero', loadChildren: () => import('./pages/juegos/adivina-el-numero/adivina-el-numero.component').then(m => m.AdivinaElNumeroComponent),canActivate: [AuthGuard] },
-  { path: 'ahoracado', loadChildren: () => import('./pages/juegos/ahorcado/ahorcado.component').then(m => m.AhorcadoComponent),canActivate: [AuthGuard] },
-  { path: 'tateti', loadChildren: () => import('./pages/juegos/tateti/tateti.component').then(m => m.TatetiComponent),canActivate: [AuthGuard] },
-  { path: 'piedra-papel-tijera', loadChildren: () => import('./pages/juegos/piedra-papel-tijera/piedra-papel-tijera.component').then(m => m.PiedraPapelTijeraComponent),canActivate: [AuthGuard] },
+  { path: 'quien-soy', loadChildren: () => import('./pages/quien-soy/quien-soy.module').then((m:{QuienSoyModule: QuienSoyModule})=>m.QuienSoyModule)},
+  { path: 'menu-juegos',component:MenuJuegosComponent},
+  { path: 'adivina-el-numero', component:AdivinaElNumeroComponent },
+  { path: 'ahorcado',component:AhorcadoComponent },
+  { path: 'tateti',component:TatetiComponent },
+  { path: 'piedra-papel-tijera',component:PiedraPapelTijeraComponent},
   {
     path: 'sign-in',
     loadChildren: () => import('./pages/auth/sign-in/sign-in.module').then(m => m.SignInModule),

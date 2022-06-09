@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { USER_STORAGE_KEY } from '@shared/constants/constant';
 
 @Component({
   selector: 'app-ahorcado',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./ahorcado.component.css']
 })
 export class AhorcadoComponent implements OnInit {
-
+  userActive =localStorage.getItem(USER_STORAGE_KEY);
   ngOnInit(): void {
   }
     @Input()viewAhorcado = false; 
