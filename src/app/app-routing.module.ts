@@ -11,22 +11,19 @@ import { LoguinComponent } from './loguin/loguin.component';
 import { RegistrarComponent } from './loguin/registrar/registrar.component';
 import { MenuJuegosComponent } from './menu-juegos/menu-juegos.component';
 import { QuienSoyComponent } from './quien-soy/quien-soy.component';
-
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  {path:'',redirectTo:'/home', pathMatch:'full'},
-  {path: 'loguin', component:LoguinComponent},
-  {path: 'home', component: HomeComponent},
-  {path:'menu-juegos',component: MenuJuegosComponent},
-  {path:'quien-soy',component:QuienSoyComponent},
-  {path:'adivina-el-numero',component:AdivinaElNumeroComponent},
-  {path:'ahorcado',component:AhorcadoComponent},
-  {path:'tateti',component:TatetiComponent},
-  {path:'piedra-papel-tijera',component:PiedraPapelTijeraComponent},
-  {path:'registrar',component:RegistrarComponent}
-  // {path:'adivina-el-numero',component:AdivinaElNumeroComponent},
-
   
+  {path:'registrar',component:RegistrarComponent},
+  {path: 'loguin', component:LoguinComponent},
+  {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
+  {path:'menu-juegos',component: MenuJuegosComponent,canActivate:[AuthGuard]},
+  {path:'quien-soy',component:QuienSoyComponent},
+  {path:'adivina-el-numero',component:AdivinaElNumeroComponent,canActivate:[AuthGuard]},
+  {path:'ahorcado',component:AhorcadoComponent,canActivate:[AuthGuard]},
+  {path:'tateti',component:TatetiComponent,canActivate:[AuthGuard]},
+  {path:'piedra-papel-tijera',component:PiedraPapelTijeraComponent,canActivate:[AuthGuard]}
   
 ];
 

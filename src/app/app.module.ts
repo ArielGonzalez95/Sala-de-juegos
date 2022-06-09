@@ -24,6 +24,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { firebaseConfig } from "./Db";
 import { RegistrarComponent } from './loguin/registrar/registrar.component'
+import { AuthService } from './auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -53,7 +55,7 @@ import { RegistrarComponent } from './loguin/registrar/registrar.component'
     AngularFireStorageModule,
     AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

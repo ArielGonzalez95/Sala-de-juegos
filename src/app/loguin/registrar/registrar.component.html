@@ -1,55 +1,44 @@
 <div class="container ">
 
     <div class="d-flex justify-content-center mt-5">
-    
-    <div class="mt-5">
-    
-    <h4>Iniciar Sesion</h4>
-    
-    <div class="form-group">
-    
-    <label for="formGroupExampleInput">Email</label>
-    
-    <input
-    
-    type="email"
-    
-    class="form-control"
-    
-    id="formGroupExampleInput"
-    
-    placeholder="Ingrese Correo"
-    
-    [(ngModel)]="email"
-    
-    />
-    
+
+        <div class="mt-5">
+
+            <h4>Registrar</h4>
+
+            <div class="form-group">
+
+                <label for="formGroupExampleInput">Email</label>
+
+                <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Ingrese Correo"
+                    [(ngModel)]="email" />
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="formGroupExampleInput2">Contraseña</label>
+
+                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese Contraseña"
+                    [(ngModel)]="password" />
+
+            </div>
+            <div class="form-group">
+
+                <label for="formGroupExampleInput2">Repetir Contraseña</label>
+
+                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese Contraseña"
+                    [(ngModel)]="password2" />
+
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3 justify-content-center"
+                (click)="SignUp(email, password)">Registrarse</button>
+                
+            <div><button routerLink="/loguin" class="btn btn-primary mt-3 justify-content-center">Iniciar Sesion</button></div>    
+
+        </div>
+
     </div>
-    
-    <div class="form-group">
-    
-    <label for="formGroupExampleInput2">Contraseña</label>
-    
-    <input
-    
-    type="pass"
-    
-    class="form-control"
-    
-    id="formGroupExampleInput2"
-    
-    placeholder="Ingrese Contraseña"
-    
-    [(ngModel)]="password"
-    
-    />
-    
-    </div>
-    
-    <button type="submit" class="btn btn-primary mt-3 justify-content-center" (click)="SignUp(email, password)"> Iniciar Sesion</button>
-    
-    </div>
-    
-    </div>
-    
-    </div>
+
+</div>
