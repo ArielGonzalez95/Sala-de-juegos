@@ -3,9 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Sala-de-juegos": {
+    "supabaseAuth": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -17,22 +20,22 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sala-de-juegos",
+            "outputPath": "dist/supabaseAuth",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-toastr/toastr.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/normalize.css/normalize.css",              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
@@ -47,7 +50,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "6kb"
+                  "maximumError": "4kb"
                 }
               ],
               "fileReplacements": [
@@ -70,13 +73,16 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "port": 45850
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Sala-de-juegos:build:production"
+              "browserTarget": "supabaseAuth:build:production"
             },
             "development": {
-              "browserTarget": "Sala-de-juegos:build:development"
+              "browserTarget": "supabaseAuth:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Sala-de-juegos:build"
+            "browserTarget": "supabaseAuth:build"
           }
         },
         "test": {
@@ -94,22 +100,31 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "node_modules/normalize.css/normalize.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "Sala-de-juegos",
+  "defaultProject": "supabaseAuth",
   "cli": {
-    "analytics": "a6435f20-8a81-4e9f-b7d9-55cb21753c94"
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }
