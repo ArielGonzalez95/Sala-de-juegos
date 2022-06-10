@@ -17,6 +17,7 @@ import { PiedraPapelTijeraComponent } from './pages/juegos/piedra-papel-tijera/p
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { PiedraPapelTijeraComponent } from './pages/juegos/piedra-papel-tijera/p
     MenuJuegosComponent,
     AhorcadoComponent,
     TatetiComponent,
-    PiedraPapelTijeraComponent
+    PiedraPapelTijeraComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { USER_STORAGE_KEY } from '@shared/constants/constant';
 
 
