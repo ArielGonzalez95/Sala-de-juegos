@@ -6,7 +6,6 @@ import { AhorcadoComponent } from './pages/juegos/ahorcado/ahorcado.component';
 import { PiedraPapelTijeraComponent } from './pages/juegos/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TatetiComponent } from './pages/juegos/tateti/tateti.component';
 import { MenuJuegosComponent } from './pages/menu-juegos/menu-juegos.component';
-import { QuienSoyComponent } from './pages/quien-soy/quien-soy.component';
 import { QuienSoyModule } from './pages/quien-soy/quien-soy.module';
 
 const routes: Routes = [

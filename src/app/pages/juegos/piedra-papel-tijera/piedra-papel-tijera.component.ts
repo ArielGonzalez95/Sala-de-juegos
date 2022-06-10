@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { USER_STORAGE_KEY } from '@shared/constants/constant';
 import { GameService } from './game.service';
 
 
@@ -11,7 +12,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   result: string | undefined;
   pointsUser = 0;
   pointsComp =  0;
-
+  userActive =localStorage.getItem(USER_STORAGE_KEY);
   constructor(private playGame: GameService) {}
 
   ngOnInit(): void {
