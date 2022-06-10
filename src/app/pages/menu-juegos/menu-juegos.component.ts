@@ -1,8 +1,7 @@
 
 import { Component,OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { USER_STORAGE_KEY } from '@shared/constants/constant';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-menu-juegos',
