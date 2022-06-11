@@ -77,29 +77,39 @@ export class TatetiComponent {
 
     if (this.color[0] == this.color[1] && this.color[0] == this.color[2] && this.color[0]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
+      this.limpiar();
     } 
     else if (this.color[3] == this.color[4] && this.color[3] == this.color[5] && this.color[3]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
+      this.limpiar();
     }
      else if (this.color[6] == this.color[7] && this.color[6] == this.color[8] && this.color[6]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
+      this.limpiar();
     }
     else if (this.color[0] == this.color[3] && this.color[0] == this.color[6] && this.color[0]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
+      this.limpiar();
     }
     else if (this.color[1] == this.color[4] && this.color[1] == this.color[7] && this.color[1]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
+      this.limpiar();
     }
     else if (this.color[2] == this.color[5] && this.color[2] == this.color[8] && this.color[2]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
+      this.limpiar();
     }
     else if (this.color[0] == this.color[4] && this.color[0] == this.color[8] && this.color[0]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
+      this.limpiar();
     }
     else if (this.color[2] == this.color[4] && this.color[2] == this.color[6] && this.color[2]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
+      this.limpiar();
     }
     
   }
-
+  limpiar(){
+    this.color.splice(0, this.color.length)
+  }
 }

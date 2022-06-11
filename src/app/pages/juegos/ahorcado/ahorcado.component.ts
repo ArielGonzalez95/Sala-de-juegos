@@ -9,6 +9,8 @@ import { USER_STORAGE_KEY } from '@shared/constants/constant';
 })
 export class AhorcadoComponent implements OnInit {
   userActive =localStorage.getItem(USER_STORAGE_KEY);
+  
+
   ngOnInit(): void {
   }
     @Input()viewAhorcado = false; 
@@ -21,6 +23,8 @@ export class AhorcadoComponent implements OnInit {
       while(true){
         if(a == ""){
           a = prompt("Ingrese almenos una palabra");
+        }else if(Number(a)){
+          a = prompt("Ingrese una palabra sin numeros");
         }else{
           this.palabra = a;
           break;
