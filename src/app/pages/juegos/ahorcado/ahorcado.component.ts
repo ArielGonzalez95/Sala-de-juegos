@@ -1,3 +1,4 @@
+import { LiteralMapExpr, ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { USER_STORAGE_KEY } from '@shared/constants/constant';
 
@@ -13,7 +14,23 @@ export class AhorcadoComponent implements OnInit {
     @Input()viewAhorcado = false; 
     @Input() volver : boolean = false;
     title = "Ahorcado";
-    palabra: any = prompt("Ingresa la palabra oculta:");
+    palabra:any; 
+    llamarPalabra: any = this.llamar(); 
+    llamar(){
+     var a= prompt("Ingresa la palabra oculta:");
+      while(true){
+        if(a == ""){
+          a = prompt("Ingrese almenos una palabra");
+        }else{
+          this.palabra = a;
+          break;
+        }
+
+      }
+     
+    }
+    
+    a = true;
     palabraOculta: any = "";
     intentos = 0;
     gano = false;
@@ -33,6 +50,7 @@ export class AhorcadoComponent implements OnInit {
       "l",
       "m",
       "n",
+      "ñ",
       "o",
       "p",
       "q",

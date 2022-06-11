@@ -13,20 +13,21 @@ export class AdivinaElNumeroComponent implements OnInit {
   valorInput : string = "";
   recibidoDePadre:  string = "";
   mensajeAmodal : string ="";  
-  
+  numeroSecreto = this.numAleatorio(0,100)
   constructor() { }
-
+  numAleatorio(a:any,b:any)
+  {
+      return Math.round(Math.random() * (b - a) + parseInt(a, 10));
+  }
   ngOnInit(): void {
   }
   
   public compararNumeros() {
     var numeroInput = parseInt(this.valorInput);
-    var max = 100; 
-    var min = 1; 
-    var numerom = Math.random()*(max-min) + min; 
-    numerom = Math.round(numerom);
+    var numerom = this.numeroSecreto;
+    numerom = Math.trunc(numerom);
       console.log(numerom);
-
+    
     if(numeroInput == numerom){
       this.recibidoDePadre = "HAS GANADO"; 
       this.mensajeAmodal = this.recibidoDePadre;
