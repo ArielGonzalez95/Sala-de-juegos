@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { USER_STORAGE_KEY } from '@shared/constants/constant';
 import { GameService } from './game.service';
 
@@ -14,10 +15,14 @@ export class PiedraPapelTijeraComponent implements OnInit {
   pointsComp =  0;
   userActive =localStorage.getItem(USER_STORAGE_KEY);
   mensaje = "";
-  constructor(private playGame: GameService) {}
+  constructor(private playGame: GameService,private readonly router: Router) {}
 
   ngOnInit(): void {
+    if (this.userActive == null) {
+      this.router.navigate(['/sign-in']);
+    }
     this.result = 'Esperando jugada...';
+    
   }
 
   play(choice: string): void {

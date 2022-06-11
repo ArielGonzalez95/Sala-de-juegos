@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { USER_STORAGE_KEY } from '@shared/constants/constant';
 
 
@@ -14,12 +15,20 @@ export class AdivinaElNumeroComponent implements OnInit {
   recibidoDePadre:  string = "";
   mensajeAmodal : string ="";  
   numeroSecreto = this.numAleatorio(0,100)
-  constructor() { }
+
+  
+
+  constructor(private readonly router: Router) { }
+
+  
   numAleatorio(a:any,b:any)
   {
       return Math.round(Math.random() * (b - a) + parseInt(a, 10));
   }
   ngOnInit(): void {
+    if (this.userActive == null) {
+      this.router.navigate(['/sign-in']);
+    }
   }
   
   public compararNumeros() {

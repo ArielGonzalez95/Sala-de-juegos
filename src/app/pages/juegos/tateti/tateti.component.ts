@@ -1,5 +1,7 @@
 import { compileNgModuleDeclarationExpression } from '@angular/compiler/src/render3/r3_module_compiler';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { USER_STORAGE_KEY } from '@shared/constants/constant';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 
 
@@ -12,7 +14,17 @@ import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 export class TatetiComponent {
   turno = 0;
   color = [""];
+  userActive =localStorage.getItem(USER_STORAGE_KEY);
   
+constructor(private readonly router: Router){}
+
+ngOnInit(): void {
+  if (this.userActive == null) {
+    this.router.navigate(['/sign-in']);
+  }
+  
+}
+
 
   posision1() {
     this.turno++;
