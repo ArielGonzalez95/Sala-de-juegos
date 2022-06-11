@@ -1,0 +1,17 @@
+button{
+    width: 200px;
+    height: 200px;
+}
+.title{
+    margin: auto;
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    width: 600px;
+    margin-top: 50px;
+
+    
+}

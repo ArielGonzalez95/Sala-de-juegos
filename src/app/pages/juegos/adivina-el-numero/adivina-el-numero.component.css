@@ -1,7 +1,13 @@
-body {
-    
-    margin: 1rem;
-    padding: 1rem;
-    border: 2px solid #ccc;
+.container {
+    display:  grid;
+    grid-template-columns: 1fr;
     text-align: center;
-  }
+    margin: auto;
+}
+
+.title{
+  font-size: 25px;
+  margin-bottom: 100px;
+}
+
+  

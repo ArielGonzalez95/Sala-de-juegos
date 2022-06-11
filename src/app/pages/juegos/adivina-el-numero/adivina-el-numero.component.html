@@ -1,9 +1,9 @@
 
-    <main class="container row col-12" *ngIf="userActive">
+    <div class="container">
         <div class="title">Adivina el numero</div>
 
-        <div class="row col-2"> 
-            
+        <div> 
+   
             <label for="inputNumero">Introduce un numero <input type="text" [(ngModel)]="valorInput" name="inputNumero"></label>
 
             <button class="btn-primary my-2" data-toggle="modal" data-target="#ventanaModal" ng (click)="compararNumeros()" ng (click)="limpiar()" > Jugar!!</button>
@@ -12,4 +12,4 @@
 
             <app-mensaje [mensaje]="mensajeAmodal"></app-mensaje>
              
-    </main>
+    </div>
