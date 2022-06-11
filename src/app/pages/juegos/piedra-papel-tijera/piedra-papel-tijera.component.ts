@@ -13,16 +13,16 @@ export class PiedraPapelTijeraComponent implements OnInit {
   pointsUser = 0;
   pointsComp =  0;
   userActive =localStorage.getItem(USER_STORAGE_KEY);
+  mensaje = "";
   constructor(private playGame: GameService) {}
 
   ngOnInit(): void {
     this.result = 'Esperando jugada...';
-    console.log(this.pointsUser);
   }
 
   play(choice: string): void {
     const result = this.playGame.game(choice);
-    console.log(result);
+    this.mensaje= result.message;
     this.result = result.message;
     this.pointsUser += result.userAdd;
     this.pointsComp += result.compAdd;

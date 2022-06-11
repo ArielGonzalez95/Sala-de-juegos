@@ -36,7 +36,7 @@ export class GameService {
       case 'sp':
       case 'pr':
         playStatus = {
-          message: 'Ganas a la computadora',
+          message: 'Ganaste :(',
           userAdd: 1,
           compAdd: 0,
         };
@@ -46,7 +46,7 @@ export class GameService {
       case 'ps':
       case 'sr':
         playStatus = {
-          message: 'Gana la computadora',
+          message: 'Te gane :)',
           userAdd: 0,
           compAdd: 1,
         };
@@ -56,7 +56,7 @@ export class GameService {
       case 'pp':
       case 'ss':
         playStatus = {
-          message: 'Habéis elegido la misma jugada y habéis empatado',
+          message: 'Empatamos, pero la proxima te la gano!',
           userAdd: 0,
           compAdd: 0,
         };
