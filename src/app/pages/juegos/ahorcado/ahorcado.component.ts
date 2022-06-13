@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterState } from '@angular/router';
 import { USER_STORAGE_KEY } from '@shared/constants/constant';
-import {HostListener} from '@angular/core';
+import { HostListener } from '@angular/core';
 import { compileNgModuleDeclarationExpression } from '@angular/compiler/src/render3/r3_module_compiler';
 
 @Component({
@@ -21,7 +21,8 @@ export class AhorcadoComponent implements OnInit {
   title = "Ahorcado";
   palabra: any;
   llamarPalabra: any = this.llamar();
-  ingresoTeclado ="";
+  ingresoTeclado = "";
+  letrasUsadas: any = [];
 
   llamar() {
 
@@ -92,9 +93,10 @@ export class AhorcadoComponent implements OnInit {
   }
 
   comprobar(letra: any) {
+
+
     this.existeLetra(letra);
     const palabraOcultaArreglo = this.palabraOculta.split(" ");
-
     for (let i = 0; i <= this.palabra.length; i++) {
       if (this.palabra[i] === letra) {
         palabraOcultaArreglo[i] = letra;
@@ -129,13 +131,13 @@ export class AhorcadoComponent implements OnInit {
   }
 
   @HostListener('document:keyup', ['$event'])
-  onKeyUp(ev:KeyboardEvent) {
+  onKeyUp(ev: KeyboardEvent) {
     this.ingresoTeclado = ev.key;
-
-    if(this.ingresoTeclado != ""){
-      this.comprobar(this.ingresoTeclado);
+      if ((this.ingresoTeclado != "") && (!/[^a-zA-Z]/.test(this.ingresoTeclado)) && (this.ingresoTeclado.length == 1)) {
+        this.comprobar(this.ingresoTeclado);
+        this.letrasUsadas.push(this.ingresoTeclado+",");
+      }
     }
-    
-   }
-  }
+
+}
 

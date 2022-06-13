@@ -34,7 +34,11 @@
             {{letra.toUpperCase()}}
           </button>
         </div>
+        <div>
+          <h4>Letras Usadas: <p *ngFor="let letras of letrasUsadas">{{letras}} </p></h4>
+        </div>
       </div>
+
       <div class="row" *ngIf="gano">
         <div class="col text-center">
           <h1 class="text-success">Felicidades! Ganaste!!! :D</h1>

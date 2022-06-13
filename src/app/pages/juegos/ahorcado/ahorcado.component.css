@@ -13,3 +13,9 @@ div {
   .ahorcado{
       margin: 200px;
   }
+  h4{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+  }
