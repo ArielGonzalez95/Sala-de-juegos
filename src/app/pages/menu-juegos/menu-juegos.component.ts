@@ -11,13 +11,13 @@ import { USER_STORAGE_KEY } from '@shared/constants/constant';
 })
 export class MenuJuegosComponent implements OnInit  {
 
-  constructor(private readonly router: Router) { }
-  userActive =localStorage.getItem(USER_STORAGE_KEY);
+  constructor() { }
+
 
   ngOnInit(): void {
-    if(this.userActive == null){
-      this.router.navigate(['/sign-in']);
-    }
+    // if(this.userActive == null){
+    //   this.router.navigate(['/sign-in']);
+    // }
   }
   
   

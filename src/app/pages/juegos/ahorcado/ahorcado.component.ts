@@ -26,9 +26,7 @@ export class AhorcadoComponent implements OnInit {
 
   llamar() {
 
-    if (this.userActive == null) {
-      this.router.navigate(['/sign-in']);
-    } else {
+   
       var a = prompt("Ingresa la palabra oculta:");
 
       while (true) {
@@ -46,7 +44,6 @@ export class AhorcadoComponent implements OnInit {
           break;
         }
       }
-    }
   }
   palabraOculta: any = "";
   intentos = 0;

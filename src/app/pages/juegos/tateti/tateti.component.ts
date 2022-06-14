@@ -19,9 +19,9 @@ export class TatetiComponent {
 constructor(private readonly router: Router){}
 
 ngOnInit(): void {
-  if (this.userActive == null) {
-    this.router.navigate(['/sign-in']);
-  }
+  // if (this.userActive == null) {
+  //   this.router.navigate(['/sign-in']);
+  // }
   
 }
 

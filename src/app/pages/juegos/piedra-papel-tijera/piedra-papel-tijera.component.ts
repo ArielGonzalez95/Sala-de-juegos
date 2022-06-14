@@ -18,9 +18,9 @@ export class PiedraPapelTijeraComponent implements OnInit {
   constructor(private playGame: GameService,private readonly router: Router) {}
 
   ngOnInit(): void {
-    if (this.userActive == null) {
-      this.router.navigate(['/sign-in']);
-    }
+    // if (this.userActive == null) {
+    //   this.router.navigate(['/sign-in']);
+    // }
     this.result = 'Esperando jugada...';
     
   }
