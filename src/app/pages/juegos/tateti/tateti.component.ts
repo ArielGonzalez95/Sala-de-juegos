@@ -1,7 +1,9 @@
 import { compileNgModuleDeclarationExpression } from '@angular/compiler/src/render3/r3_module_compiler';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '@env/environment';
 import { USER_STORAGE_KEY } from '@shared/constants/constant';
+import { createClient } from '@supabase/supabase-js';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 
 
@@ -15,13 +17,17 @@ export class TatetiComponent {
   turno = 0;
   color = [""];
   userActive =localStorage.getItem(USER_STORAGE_KEY);
+  puntos: number| any;
+  id: number | any;
+  emailUsuario: string | any;
+  userExist = false;
+  juego: string|any;
+  llamar:boolean = false;
   
 constructor(private readonly router: Router){}
 
 ngOnInit(): void {
-  // if (this.userActive == null) {
-  //   this.router.navigate(['/sign-in']);
-  // }
+ 
   
 }
 
@@ -85,43 +91,124 @@ ngOnInit(): void {
 
 
 
-  comprobarGanador() {
+ async comprobarGanador() {
 
     if (this.color[0] == this.color[1] && this.color[0] == this.color[2] && this.color[0]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
-      this.limpiar();
+      if(this.turno % 2 == 0){
+        this.llamar=true;
+      }
+      
     } 
     else if (this.color[3] == this.color[4] && this.color[3] == this.color[5] && this.color[3]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
-      this.limpiar();
+      if(this.turno % 2 == 0){
+        this.llamar=true;
+      }
+      
     }
      else if (this.color[6] == this.color[7] && this.color[6] == this.color[8] && this.color[6]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
-      this.limpiar();
+      if(this.turno % 2 == 0){
+        this.llamar=true;
+      }
+      
     }
     else if (this.color[0] == this.color[3] && this.color[0] == this.color[6] && this.color[0]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
-      this.limpiar();
+      if(this.turno % 2 == 0){
+        this.llamar=true;
+      }
+      
     }
     else if (this.color[1] == this.color[4] && this.color[1] == this.color[7] && this.color[1]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
-      this.limpiar();
+      if(this.turno % 2 == 0){
+        this.llamar=true;
+      }
+      
     }
     else if (this.color[2] == this.color[5] && this.color[2] == this.color[8] && this.color[2]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
-      this.limpiar();
+      if(this.turno % 2 == 0){
+        this.llamar=true;
+      }
+      
     }
     else if (this.color[0] == this.color[4] && this.color[0] == this.color[8] && this.color[0]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
-      this.limpiar();
+      if(this.turno % 2 == 0){
+        this.llamar=true;
+      }
+      
     }
     else if (this.color[2] == this.color[4] && this.color[2] == this.color[6] && this.color[2]) {
       alert("gano el jugador: "+ (this.turno % 2 ?'azul':'Rojo'));
-      this.limpiar();
+      if(this.turno % 2 == 0){
+        this.llamar=true;
+      }
+      
+    }
+
+    if(this.llamar == true){
+      const supabase = createClient(environment.supabase.url, environment.supabase.publicKey);
+        const user = supabase.auth.user()
+        let { data: UsersGanadores, error } = await supabase
+      .from('UsersGanadores')
+      .select('*')
+      
+      const datos = UsersGanadores?.filter(i => i.user == user?.email);
+      const data = datos?.filter(i => i.juego == 'Ta Te Ti');
+          this.puntos = data?.map(i => i.puntos);
+          this.id = data?.map(i => i.id);
+          this.emailUsuario = data?.map(i =>i.user);
+
+          if(this.puntos.length == 0){
+            this.insertarNew();
+           }else{
+            
+            this.UpdatePuntaje();
+           }
+           
+    
     }
     
+    
+    
   }
-  limpiar(){
-    this.color.splice(0, this.color.length)
+ async limpiar(): Promise<void>{
+   await window.location.reload();
+
   }
+
+
+  async UpdatePuntaje(){
+  
+    const supabase = createClient(environment.supabase.url, environment.supabase.publicKey);
+    const id = this.id;
+    const puntos = parseInt(this.puntos);
+    const puntosSumado = puntos + 1;
+    console.log('entro a update');
+    
+      const { data, error } = await supabase
+    .from('UsersGanadores')
+    .update({ puntos:puntosSumado })
+    .eq('id',id)
+    this.limpiar();
+   
+  }
+
+  async insertarNew(){
+    console.log('entro a create');
+    const supabase = createClient(environment.supabase.url, environment.supabase.publicKey);
+    const user = supabase.auth.user();
+    const juego = "Ta Te Ti";
+    const { data, error } = await supabase
+    .from('UsersGanadores')
+    .insert([
+      { user: user?.email, puntos:'1', juego: juego },
+    ])
+    this.limpiar();
+  }
+  
 }

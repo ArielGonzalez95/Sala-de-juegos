@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
+import { EmailValidator } from "@angular/forms";
 import { environment } from "@env/environment";
 import { USER_STORAGE_KEY } from "@shared/constants/constant";
 import { ApiError, createClient, Session, SupabaseClient, User, UserCredentials } from "@supabase/supabase-js";
+import { userInfo } from "os";
 import { BehaviorSubject, Observable } from "rxjs";
 
 type supabaseResponse = User | Session | ApiError | null;
@@ -10,6 +12,7 @@ type supabaseResponse = User | Session | ApiError | null;
 export class AuthService {
   private supabaseClient: SupabaseClient;
   private userSubject = new BehaviorSubject<User | null>(null);
+
 
   constructor() {
     this.supabaseClient = createClient(environment.supabase.url, environment.supabase.publicKey);
@@ -51,5 +54,8 @@ export class AuthService {
   private setUser(): void {
     const session = localStorage.getItem(USER_STORAGE_KEY) as unknown as User;
     this.userSubject.next(session);
+    
   }
+
+  
 }

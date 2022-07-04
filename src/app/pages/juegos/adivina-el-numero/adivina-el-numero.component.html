@@ -4,7 +4,7 @@
 
         <div> 
    
-            <label for="inputNumero">Introduce un numero <input type="text" ([ngModel])="valorInput"></label>
+            <label>Introduce un numero <input [(ngModel)]='valorInput' type="text" pattern="[0-9]" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" ></label>
 
             <button class="btn-primary my-2" data-toggle="modal" data-target="#ventanaModal" ng (click)="compararNumeros()" ng (click)="limpiar()" > Jugar!!</button>
 
@@ -14,5 +14,5 @@
             <h4>Numeros Usados: <p *ngFor="let numeros of numerosUsados">{{numeros}} </p></h4>
           </div>
 
-            {{ mensajeAmodal}}             
+                        {{mensaje}}
     </div>

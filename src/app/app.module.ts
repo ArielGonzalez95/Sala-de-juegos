@@ -8,11 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdivinaElNumeroComponent } from './pages/juegos/adivina-el-numero/adivina-el-numero.component';
-import { MenuJuegosComponent } from './pages/menu-juegos/menu-juegos.component';
-import { AhorcadoComponent } from './pages/juegos/ahorcado/ahorcado.component';
-import { TatetiComponent } from './pages/juegos/tateti/tateti.component';
-import { PiedraPapelTijeraComponent } from './pages/juegos/piedra-papel-tijera/piedra-papel-tijera.component';
-import { MenuJuegosModule } from './pages/menu-juegos/menu-juegos.module';
+import { TablaDeNumerosComponent } from './tabla-de-numeros/tabla-de-numeros.component';
+import { PremiumComponent } from './premium/premium.component';
 
 
 
@@ -21,8 +18,12 @@ import { MenuJuegosModule } from './pages/menu-juegos/menu-juegos.module';
 @NgModule({
   declarations: [
     AppComponent,
+    AdivinaElNumeroComponent,
+    TablaDeNumerosComponent,
+    PremiumComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     NavbarModule,

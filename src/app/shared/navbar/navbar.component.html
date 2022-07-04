@@ -8,7 +8,9 @@
     <div *ngIf="(user$ |async) != null">
       <a class="navbar-brand" [routerLink]="['/menu-juegos']">Juegos</a>
     </div>
-    
+    <div *ngIf="(user$ |async) != null">
+      <a class="navbar-brand" [routerLink]="['/tabla-de-numeros']">Tabla de puntos</a>
+    </div>    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
