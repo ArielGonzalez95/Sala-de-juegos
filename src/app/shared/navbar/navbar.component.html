@@ -10,7 +10,10 @@
     </div>
     <div *ngIf="(user$ |async) != null">
       <a class="navbar-brand" [routerLink]="['/tabla-de-numeros']">Tabla de puntos</a>
-    </div>    
+    </div>
+    <div *ngIf="(user$ |async) != null">
+      <a class="navbar-brand" [routerLink]="['/premium']">Premium</a>
+    </div>       
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -24,7 +27,7 @@
         </ul>
       </ng-container>
       <ng-template #logOutTemplate>
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto"><nav></nav>
           <a class="navbar-brand" href="#">
             <img src="assets/img-user/generic-user.png" width="30" height="30" class="d-inline-block align-top" alt="">
           </a>
