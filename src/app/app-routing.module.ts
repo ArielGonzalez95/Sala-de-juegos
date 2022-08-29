@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@auth/guards/auth.guard';
 import { PremiumGuard } from '@auth/guards/premium.guard';
 import { prependListener } from 'process';
+import { ChatComponent } from './pages/chat/chat.component';
 import { AdivinaElNumeroComponent } from './pages/juegos/adivina-el-numero/adivina-el-numero.component';
 import { AhoracadoModule } from './pages/juegos/ahorcado/ahoracado.module';
 import { AhorcadoComponent } from './pages/juegos/ahorcado/ahorcado.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
     
   },
   {path: 'premium', component: PremiumComponent,canActivate:[AuthGuard]},
+  {path:'chat', component: ChatComponent},
   
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];

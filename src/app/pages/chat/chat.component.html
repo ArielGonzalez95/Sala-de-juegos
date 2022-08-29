@@ -1,0 +1,17 @@
+<main>
+    <h1>welcome to chat!</h1>
+    <h2>Make a post</h2>
+    <form action="">
+        <input type="text" placeholder="Title" name="Title" [(ngModel)]='titleInput'>
+        <textarea name="content" id="content" cols="30" rows="10" [(ngModel)]='Contenido'></textarea>
+        <button (click)="enviarPost()">Enviar</button>
+    </form>
+</main>
+
+<div style="background-color: red;">
+    <tr *ngFor="let data of lists">
+        <td >{{data.user}}</td><br>
+        <td >{{data.Titulo}}</td>
+        
+      </tr>
+</div>

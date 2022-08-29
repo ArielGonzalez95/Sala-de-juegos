@@ -12,6 +12,9 @@
       <a class="navbar-brand" [routerLink]="['/tabla-de-numeros']">Tabla de puntos</a>
     </div>
     <div *ngIf="(user$ |async) != null">
+      <a class="navbar-brand" [routerLink]="['/chat']">Chat</a>
+    </div>
+    <div *ngIf="(user$ |async) != null">
       <a class="navbar-brand" [routerLink]="['/premium']">Premium</a>
     </div>       
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"

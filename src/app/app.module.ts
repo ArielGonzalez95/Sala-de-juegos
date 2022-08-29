@@ -10,7 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdivinaElNumeroComponent } from './pages/juegos/adivina-el-numero/adivina-el-numero.component';
 import { TablaDeNumerosComponent } from './tabla-de-numeros/tabla-de-numeros.component';
 import { PremiumComponent } from './premium/premium.component';
-
+import { ChatComponent } from './pages/chat/chat.component';
+import {chat} from './clases/chatClass'
 
 
 
@@ -20,7 +21,8 @@ import { PremiumComponent } from './premium/premium.component';
     AppComponent,
     AdivinaElNumeroComponent,
     TablaDeNumerosComponent,
-    PremiumComponent
+    PremiumComponent,
+    ChatComponent
   ],
   imports: [
     
