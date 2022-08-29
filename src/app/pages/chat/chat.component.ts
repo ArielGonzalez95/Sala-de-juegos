@@ -41,12 +41,7 @@ const mySubscription = this.supabase
   })
   .subscribe()
 
-
-  
-
   }
-  
-
   
   async obtener(){
     const supabase = createClient(environment.supabase.url, environment.supabase.publicKey);
